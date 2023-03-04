@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  Home.swift
 //  MetMuseum
 //
 //  Created by Санжар Эрмеков on 05.03.2023.
@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct Home: View {
     var body: some View {
-        Home()
+        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct Home_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
