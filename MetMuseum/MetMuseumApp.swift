@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct MetMuseumApp: App {
+    @StateObject var apiManager = APIManager()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(apiManager)
         }
     }
 }
