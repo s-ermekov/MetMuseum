@@ -7,20 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		221E699F29BA5BE600BD62F3 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221E699E29BA5BE600BD62F3 /* ColorExtension.swift */; };
+		223A7E2729BAAAD1000A9FAD /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223A7E2629BAAAD1000A9FAD /* APIError.swift */; };
+		223A7E2929BBE377000A9FAD /* SavePhotoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223A7E2829BBE377000A9FAD /* SavePhotoButton.swift */; };
+		223A7E2B29BBE386000A9FAD /* SearchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223A7E2A29BBE386000A9FAD /* SearchResultView.swift */; };
 		2256657829B6AAE400C97BDC /* Departments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2256657729B6AAE400C97BDC /* Departments.swift */; };
 		228A80CA29B3F844006297FC /* MetMuseumApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228A80C929B3F844006297FC /* MetMuseumApp.swift */; };
 		228A80CC29B3F844006297FC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228A80CB29B3F844006297FC /* ContentView.swift */; };
 		228A80CE29B3F848006297FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 228A80CD29B3F848006297FC /* Assets.xcassets */; };
 		228A80D129B3F848006297FC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 228A80D029B3F848006297FC /* Preview Assets.xcassets */; };
 		228A80DC29B3F933006297FC /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228A80DB29B3F933006297FC /* Home.swift */; };
-		228A80E029B401F8006297FC /* Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228A80DF29B401F8006297FC /* Decodable.swift */; };
+		228A80E029B401F8006297FC /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228A80DF29B401F8006297FC /* Object.swift */; };
 		228A80E229B40263006297FC /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228A80E129B40263006297FC /* APIManager.swift */; };
+		22982AE529BBEEAA000C6E33 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22982AE429BBEEAA000C6E33 /* SearchResult.swift */; };
 		22E0B74829B8B5E000A98D60 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E0B74729B8B5E000A98D60 /* SearchResultCell.swift */; };
-		22F75D2429B90B32001B0487 /* Thumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F75D2329B90B32001B0487 /* Thumbnail.swift */; };
+		22F75D2429B90B32001B0487 /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F75D2329B90B32001B0487 /* Artwork.swift */; };
 		22F75D2729B99E66001B0487 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F75D2629B99E65001B0487 /* ArrayExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		221E699E29BA5BE600BD62F3 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		223A7E2629BAAAD1000A9FAD /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		223A7E2829BBE377000A9FAD /* SavePhotoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavePhotoButton.swift; sourceTree = "<group>"; };
+		223A7E2A29BBE386000A9FAD /* SearchResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultView.swift; sourceTree = "<group>"; };
 		2256657729B6AAE400C97BDC /* Departments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Departments.swift; sourceTree = "<group>"; };
 		228A80C629B3F844006297FC /* MetMuseum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetMuseum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		228A80C929B3F844006297FC /* MetMuseumApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetMuseumApp.swift; sourceTree = "<group>"; };
@@ -28,11 +37,12 @@
 		228A80CD29B3F848006297FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		228A80D029B3F848006297FC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		228A80DB29B3F933006297FC /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
-		228A80DF29B401F8006297FC /* Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decodable.swift; sourceTree = "<group>"; };
+		228A80DF29B401F8006297FC /* Object.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
 		228A80E129B40263006297FC /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		228A80E329B4085F006297FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		22982AE429BBEEAA000C6E33 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		22E0B74729B8B5E000A98D60 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
-		22F75D2329B90B32001B0487 /* Thumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thumbnail.swift; sourceTree = "<group>"; };
+		22F75D2329B90B32001B0487 /* Artwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artwork.swift; sourceTree = "<group>"; };
 		22F75D2629B99E65001B0487 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,9 +100,10 @@
 		228A80D729B3F8E4006297FC /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				228A80DF29B401F8006297FC /* Decodable.swift */,
+				228A80DF29B401F8006297FC /* Object.swift */,
+				22982AE429BBEEAA000C6E33 /* SearchResult.swift */,
 				2256657729B6AAE400C97BDC /* Departments.swift */,
-				22F75D2329B90B32001B0487 /* Thumbnail.swift */,
+				22F75D2329B90B32001B0487 /* Artwork.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -101,7 +112,9 @@
 			isa = PBXGroup;
 			children = (
 				228A80DB29B3F933006297FC /* Home.swift */,
+				223A7E2A29BBE386000A9FAD /* SearchResultView.swift */,
 				22E0B74729B8B5E000A98D60 /* SearchResultCell.swift */,
+				223A7E2829BBE377000A9FAD /* SavePhotoButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -110,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				228A80E129B40263006297FC /* APIManager.swift */,
+				223A7E2629BAAAD1000A9FAD /* APIError.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -118,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				22F75D2629B99E65001B0487 /* ArrayExtension.swift */,
+				221E699E29BA5BE600BD62F3 /* ColorExtension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -192,15 +207,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				223A7E2B29BBE386000A9FAD /* SearchResultView.swift in Sources */,
 				22E0B74829B8B5E000A98D60 /* SearchResultCell.swift in Sources */,
+				223A7E2929BBE377000A9FAD /* SavePhotoButton.swift in Sources */,
 				228A80CC29B3F844006297FC /* ContentView.swift in Sources */,
-				228A80E029B401F8006297FC /* Decodable.swift in Sources */,
+				228A80E029B401F8006297FC /* Object.swift in Sources */,
 				22F75D2729B99E66001B0487 /* ArrayExtension.swift in Sources */,
 				228A80E229B40263006297FC /* APIManager.swift in Sources */,
 				228A80DC29B3F933006297FC /* Home.swift in Sources */,
-				22F75D2429B90B32001B0487 /* Thumbnail.swift in Sources */,
+				22982AE529BBEEAA000C6E33 /* SearchResult.swift in Sources */,
+				22F75D2429B90B32001B0487 /* Artwork.swift in Sources */,
+				221E699F29BA5BE600BD62F3 /* ColorExtension.swift in Sources */,
 				228A80CA29B3F844006297FC /* MetMuseumApp.swift in Sources */,
 				2256657829B6AAE400C97BDC /* Departments.swift in Sources */,
+				223A7E2729BAAAD1000A9FAD /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,6 +355,7 @@
 				INFOPLIST_FILE = MetMuseum/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "The Met";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Need permission to save artwork images to Photo Library.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
@@ -365,6 +386,7 @@
 				INFOPLIST_FILE = MetMuseum/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "The Met";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Need permission to save artwork images to Photo Library.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";

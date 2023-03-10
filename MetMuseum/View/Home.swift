@@ -9,58 +9,36 @@ import SwiftUI
 
 struct Home: View {
     @EnvironmentObject var apiManager: APIManager
+    @Environment(\.isSearching) var isSearching
+    @Environment(\.dismissSearch) var dismissSearch
     
-    // Search State properties
-    @State private var searchText = ""
-    
-    // SearchResult
-    let columns = [
-        GridItem(.flexible(minimum: 150, maximum: 300), spacing: 2),
-        GridItem(.flexible(minimum: 150, maximum: 300), spacing: 2)
-    ]
+    let width = UIScreen.main.bounds.width - 48
     
     var body: some View {
         NavigationView {
             // Search Results
-            ScrollView(.vertical) {
-                ZStack {
-                    if apiManager.fetchedThumbnails.isEmpty {
-                        Image("metlogo")
-                            .resizable()
-                            .frame(minWidth: 150, maxWidth: 200, minHeight: 150, maxHeight: 200)
-                            .scaledToFit()
-                            .padding(50)
-                    } else if let thumbnails = apiManager.fetchedThumbnails {
-                        LazyVGrid(columns: columns, alignment: .center, spacing: 2) {
-                            ForEach(thumbnails, id: \.id) { thumbnail in
-                                SearchResultCell(thumbnail: thumbnail)
-                            }
-                            
-                            if !thumbnails.isEmpty {
-                                ProgressView()
-                                    .frame(minWidth: 150, maxWidth: 300, minHeight: 200, maxHeight: 250)
-                                    .onAppear {
-                                        Task {
-                                            await apiManager.fetchPage()
-                                        }
-                                    }
-                            }
-                        }
-                    }
-                }
-            }
+            SearchResultView()
             
             // SearchField
-            .searchable(text: $searchText)
-            .onSubmit(of: .search) {
-                apiManager.search(for: searchText)
+            .searchable(text: $apiManager.searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search") {
+                ForEach(apiManager.searchKeywords, id: \.self) { keyword in
+                    Text(keyword).searchCompletion(keyword)
+                        .foregroundColor(.blue)
+                }
+                
+                // suggestions updating by typing search keyword from vocabulary
+//                ForEach(apiManager.keywords.filter { $0.localizedCaseInsensitiveContains(searchText) } , id: \.self) { suggestion in
+//                    Text(suggestion)
+//                        .searchCompletion(suggestion)
+//                }
             }
+            .onSubmit(of: .search) { apiManager.search() }
             
             // NavBar
             .navigationTitle("The Met Museum of Art")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem (placement: .navigationBarLeading) {
+                ToolbarItem(placement: .navigationBarLeading) {
                     Button {
                         
                     } label: {
