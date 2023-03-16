@@ -9,4 +9,4 @@ This is an open source app made to search artworks from MetMuseum.org by open AP
  * Swift Modern Concurrency with Async/Await, TaskGroup
  
 ## Screenshots
-![Screenshots](Documentation/Screenshots.png)
+![Screenshots](Screenshots.png?raw=true)
