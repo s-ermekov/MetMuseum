@@ -8,40 +8,44 @@
 
 /* Begin PBXBuildFile section */
 		221E699F29BA5BE600BD62F3 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221E699E29BA5BE600BD62F3 /* ColorExtension.swift */; };
+		2231816729C2FD8F00F17E1B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2231816629C2FD8F00F17E1B /* HomeView.swift */; };
 		223A7E2729BAAAD1000A9FAD /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223A7E2629BAAAD1000A9FAD /* APIError.swift */; };
-		223A7E2929BBE377000A9FAD /* SavePhotoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223A7E2829BBE377000A9FAD /* SavePhotoButton.swift */; };
-		223A7E2B29BBE386000A9FAD /* SearchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223A7E2A29BBE386000A9FAD /* SearchResultView.swift */; };
-		2256657829B6AAE400C97BDC /* Departments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2256657729B6AAE400C97BDC /* Departments.swift */; };
+		223A7E2929BBE377000A9FAD /* DownloadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223A7E2829BBE377000A9FAD /* DownloadButton.swift */; };
 		228A80CA29B3F844006297FC /* MetMuseumApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228A80C929B3F844006297FC /* MetMuseumApp.swift */; };
 		228A80CC29B3F844006297FC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228A80CB29B3F844006297FC /* ContentView.swift */; };
 		228A80CE29B3F848006297FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 228A80CD29B3F848006297FC /* Assets.xcassets */; };
 		228A80D129B3F848006297FC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 228A80D029B3F848006297FC /* Preview Assets.xcassets */; };
-		228A80DC29B3F933006297FC /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228A80DB29B3F933006297FC /* Home.swift */; };
+		228A80DC29B3F933006297FC /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228A80DB29B3F933006297FC /* SearchView.swift */; };
 		228A80E029B401F8006297FC /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228A80DF29B401F8006297FC /* Object.swift */; };
 		228A80E229B40263006297FC /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228A80E129B40263006297FC /* APIManager.swift */; };
 		22982AE529BBEEAA000C6E33 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22982AE429BBEEAA000C6E33 /* SearchResult.swift */; };
-		22E0B74829B8B5E000A98D60 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E0B74729B8B5E000A98D60 /* SearchResultCell.swift */; };
+		22ADC49529C2D7FB00969E3C /* sunflowers.json in Resources */ = {isa = PBXBuildFile; fileRef = 22ADC49429C2D7FB00969E3C /* sunflowers.json */; };
+		22ADC49929C2DD6500969E3C /* FileManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ADC49829C2DD6500969E3C /* FileManagerExtension.swift */; };
+		22B774CC29C33BD500DFED06 /* AttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B774CB29C33BD500DFED06 /* AttributedString.swift */; };
+		22E0B74829B8B5E000A98D60 /* SearchViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E0B74729B8B5E000A98D60 /* SearchViewCell.swift */; };
 		22F75D2429B90B32001B0487 /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F75D2329B90B32001B0487 /* Artwork.swift */; };
 		22F75D2729B99E66001B0487 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F75D2629B99E65001B0487 /* ArrayExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		221E699E29BA5BE600BD62F3 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		2231816629C2FD8F00F17E1B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		223A7E2629BAAAD1000A9FAD /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
-		223A7E2829BBE377000A9FAD /* SavePhotoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavePhotoButton.swift; sourceTree = "<group>"; };
-		223A7E2A29BBE386000A9FAD /* SearchResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultView.swift; sourceTree = "<group>"; };
-		2256657729B6AAE400C97BDC /* Departments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Departments.swift; sourceTree = "<group>"; };
+		223A7E2829BBE377000A9FAD /* DownloadButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadButton.swift; sourceTree = "<group>"; };
 		228A80C629B3F844006297FC /* MetMuseum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetMuseum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		228A80C929B3F844006297FC /* MetMuseumApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetMuseumApp.swift; sourceTree = "<group>"; };
 		228A80CB29B3F844006297FC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		228A80CD29B3F848006297FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		228A80D029B3F848006297FC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		228A80DB29B3F933006297FC /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		228A80DB29B3F933006297FC /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		228A80DF29B401F8006297FC /* Object.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
 		228A80E129B40263006297FC /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		228A80E329B4085F006297FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		22982AE429BBEEAA000C6E33 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
-		22E0B74729B8B5E000A98D60 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
+		22ADC49429C2D7FB00969E3C /* sunflowers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sunflowers.json; sourceTree = "<group>"; };
+		22ADC49829C2DD6500969E3C /* FileManagerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileManagerExtension.swift; sourceTree = "<group>"; };
+		22B774CB29C33BD500DFED06 /* AttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedString.swift; sourceTree = "<group>"; };
+		22E0B74729B8B5E000A98D60 /* SearchViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewCell.swift; sourceTree = "<group>"; };
 		22F75D2329B90B32001B0487 /* Artwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artwork.swift; sourceTree = "<group>"; };
 		22F75D2629B99E65001B0487 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -57,6 +61,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2231816829C2FDCD00F17E1B /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+				22E0B74729B8B5E000A98D60 /* SearchViewCell.swift */,
+				223A7E2829BBE377000A9FAD /* DownloadButton.swift */,
+			);
+			path = SearchView;
+			sourceTree = "<group>";
+		};
 		228A80BD29B3F843006297FC = {
 			isa = PBXGroup;
 			children = (
@@ -76,13 +89,13 @@
 		228A80C829B3F844006297FC /* MetMuseum */ = {
 			isa = PBXGroup;
 			children = (
-				22F75D2529B99E45001B0487 /* Helpers */,
 				228A80C929B3F844006297FC /* MetMuseumApp.swift */,
 				228A80CB29B3F844006297FC /* ContentView.swift */,
 				228A80D729B3F8E4006297FC /* Model */,
 				228A80D929B3F8F7006297FC /* View */,
 				228A80DA29B3F90F006297FC /* ViewModel */,
 				228A80CD29B3F848006297FC /* Assets.xcassets */,
+				22F75D2529B99E45001B0487 /* Helpers */,
 				228A80E329B4085F006297FC /* Info.plist */,
 				228A80CF29B3F848006297FC /* Preview Content */,
 			);
@@ -100,9 +113,9 @@
 		228A80D729B3F8E4006297FC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				22ADC49429C2D7FB00969E3C /* sunflowers.json */,
 				228A80DF29B401F8006297FC /* Object.swift */,
 				22982AE429BBEEAA000C6E33 /* SearchResult.swift */,
-				2256657729B6AAE400C97BDC /* Departments.swift */,
 				22F75D2329B90B32001B0487 /* Artwork.swift */,
 			);
 			path = Model;
@@ -111,10 +124,9 @@
 		228A80D929B3F8F7006297FC /* View */ = {
 			isa = PBXGroup;
 			children = (
-				228A80DB29B3F933006297FC /* Home.swift */,
-				223A7E2A29BBE386000A9FAD /* SearchResultView.swift */,
-				22E0B74729B8B5E000A98D60 /* SearchResultCell.swift */,
-				223A7E2829BBE377000A9FAD /* SavePhotoButton.swift */,
+				2231816629C2FD8F00F17E1B /* HomeView.swift */,
+				228A80DB29B3F933006297FC /* SearchView.swift */,
+				2231816829C2FDCD00F17E1B /* SearchView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -131,8 +143,10 @@
 		22F75D2529B99E45001B0487 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				22ADC49829C2DD6500969E3C /* FileManagerExtension.swift */,
 				22F75D2629B99E65001B0487 /* ArrayExtension.swift */,
 				221E699E29BA5BE600BD62F3 /* ColorExtension.swift */,
+				22B774CB29C33BD500DFED06 /* AttributedString.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -196,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				228A80D129B3F848006297FC /* Preview Assets.xcassets in Resources */,
+				22ADC49529C2D7FB00969E3C /* sunflowers.json in Resources */,
 				228A80CE29B3F848006297FC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,19 +222,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				223A7E2B29BBE386000A9FAD /* SearchResultView.swift in Sources */,
-				22E0B74829B8B5E000A98D60 /* SearchResultCell.swift in Sources */,
-				223A7E2929BBE377000A9FAD /* SavePhotoButton.swift in Sources */,
+				22E0B74829B8B5E000A98D60 /* SearchViewCell.swift in Sources */,
+				223A7E2929BBE377000A9FAD /* DownloadButton.swift in Sources */,
 				228A80CC29B3F844006297FC /* ContentView.swift in Sources */,
 				228A80E029B401F8006297FC /* Object.swift in Sources */,
 				22F75D2729B99E66001B0487 /* ArrayExtension.swift in Sources */,
 				228A80E229B40263006297FC /* APIManager.swift in Sources */,
-				228A80DC29B3F933006297FC /* Home.swift in Sources */,
+				228A80DC29B3F933006297FC /* SearchView.swift in Sources */,
 				22982AE529BBEEAA000C6E33 /* SearchResult.swift in Sources */,
 				22F75D2429B90B32001B0487 /* Artwork.swift in Sources */,
+				22ADC49929C2DD6500969E3C /* FileManagerExtension.swift in Sources */,
 				221E699F29BA5BE600BD62F3 /* ColorExtension.swift in Sources */,
 				228A80CA29B3F844006297FC /* MetMuseumApp.swift in Sources */,
-				2256657829B6AAE400C97BDC /* Departments.swift in Sources */,
+				22B774CC29C33BD500DFED06 /* AttributedString.swift in Sources */,
+				2231816729C2FD8F00F17E1B /* HomeView.swift in Sources */,
 				223A7E2729BAAAD1000A9FAD /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,7 +293,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -331,7 +347,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

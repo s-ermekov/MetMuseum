@@ -7,8 +7,6 @@
 
 import UIKit
 
-
-
 @MainActor
 class APIManager: ObservableObject {
     
@@ -18,78 +16,94 @@ class APIManager: ObservableObject {
     
     @Published var fetchedArtworks: [Artwork] = []
     
-//    private var thumbnailsCache: [Int: Thumbnail] = [:]
-//    
-//    private var objectsCache: [Int: Object] = [:]
+    @Published var errorMessage: String? = nil
     
-    var searchKeywords: [String] = []
+    @Published var isLoading: Bool = false
     
-    var pages: [[Int]] = [[]]
-    var pageToFetch: Int = 0
     
-    @Published var isSaving = false
-    
-    func savePhoto(url urlString: String) {
-        Task {
-            self.isSaving = true
-            
-            do {
-                guard let url = URL(string: urlString) else { throw APIError.badURL }
-                
-                let session = URLSession(configuration: .default)
-                
-                let (data, _) = try await session.data(from: url)
-                
-                let image = UIImage(data: data)
-                
-                if let unwrappedImage = image {
-                    UIImageWriteToSavedPhotosAlbum(unwrappedImage, nil, nil, nil)
-                }
-            } catch {
-                print(error)
-            }
-            
-            self.isSaving = false
+    // MARK: - Previous search keywords
+    var searchKeywords: [String] = [] {
+        didSet {
+            print(searchKeywords)
+            saveKeywords()
         }
     }
     
-    func fetchMore() async {
-        let lastPage = pages.count - 1
-        
+    init() {
+        do {
+            let data = try Data(contentsOf: FileManager.keywordsPath)
+            searchKeywords = try JSONDecoder().decode([String].self, from: data)
+        } catch {
+            print("DEBUG: \(error.localizedDescription)")
+            searchKeywords = []
+        }
+    }
+    
+    func saveKeywords() {
+        do {
+            let data = try JSONEncoder().encode(searchKeywords)
+            try data.write(to: FileManager.keywordsPath, options: [.atomic, .completeFileProtection])
+        } catch {
+            print("DEBUG: \(error.localizedDescription)")
+        }
+    }
+    
+    func addKeyword(_ keyword: String) {
+        if searchKeywords.contains(keyword) {
+            if let indexOfKeyword = searchKeywords.firstIndex(of: keyword) {
+                searchKeywords.remove(at: indexOfKeyword)
+                searchKeywords.insert(keyword, at: 0)
+            }
+        } else {
+            searchKeywords.insert(keyword, at: 0)
+        }
+    }
+    
+    // MARK: - Pagination
+    var canFetchMore: Bool { return pageToFetch < pages.count - 1 }
+    private var pages: [[Int]] = [[]]
+    private var pageToFetch: Int = 0
+    
+    func fetchMore() {
         var objectIDs: [Int] = []
-        
-        if pageToFetch + 1 <= lastPage {
+        if pageToFetch + 1 <= pages.count - 1 {
             pageToFetch += 1
             objectIDs = pages[pageToFetch]
         }
-        
         if !objectIDs.isEmpty {
-            do {
-                try await fetchArtworks(for: objectIDs)
-            } catch {
-                print(error)
+            Task {
+                do {
+                    try await fetchArtworks(for: objectIDs)
+                } catch let error as APIError {
+                    print("DEBUG: \(error.description)")
+                }
             }
         }
     }
     
-    private func setDefaults() {
+    // MARK: - Set to Defaults
+    func allClear() {
         self.fetchedArtworks = []
         self.pages = [[]]
         self.pageToFetch = 0
+        self.errorMessage = nil
     }
     
+    // MARK: - Search Activate
     func search() {
         Task(priority: .high) {
             try await fetchSearchResult()
         }
     }
     
-    
+    // MARK: - Fetching Search Result
     func fetchSearchResult() async throws {
         // Prepare for Search Request
         if searchText.isEmpty { throw APIError.emptySearchText }
         
-        setDefaults()
+        addKeyword(searchText)
+        
+        allClear()
         
         let text = self.searchText.replacingOccurrences(of: " ", with: "%20")
         
@@ -99,28 +113,33 @@ class APIManager: ObservableObject {
             /// Creating URL and trying to fetch department list.
             guard let url = URL(string: urlString) else { throw APIError.badURL }
             
-            let session = URLSession(configuration: .default)
-            
-            let (data, _) = try await session.data(from: url)
+            let (data, _) = try await URLSession.shared.data(from: url)
             
             /// Trying to decode JSON to Departments list
             let decoded = try JSONDecoder().decode(SearchResult.self, from: data)
             
             self.searchResult = decoded
             
+            print("DEBUG: Total amount of objects: \(decoded.total).")
+            
             guard let ids = decoded.objectIDs else { throw APIError.objectsNil}
             
-            self.pages = ids.chunked(into: 12)
+            self.pages = ids.chunked(into: 10)
             
-            /// Load the first 20 thumbnails
+            /// Load the first 10 thumbnails
             try await fetchArtworks(for: pages.first ?? [])
             
-        } catch {
-            print(error)
+        } catch let error as APIError {
+            self.errorMessage = error.description
+            
+            print("DEBUG: \(error.description)")
         }
     }
     
+    // MARK: - Fetching Images If Available Asynchronously withThrowingTaskGroup
     func fetchArtworks(for ids: [Int]) async throws {
+        isLoading = true
+        
         do {
             /// Create empty dictionary for  [object id : image] pair
             var artworks: [Artwork] = []
@@ -128,54 +147,59 @@ class APIManager: ObservableObject {
             ///  Create async Task Group for concurrent downloading of thumbnails
             try await withThrowingTaskGroup(of: Artwork?.self) { group in
                 for id in ids {
-                    group.addTask { [self] in
-                        return try await fetchOneArtwork(withID: id)
+                    if !fetchedArtworks.contains(where: { $0.id == id }) {
+                        group.addTask { [self] in
+                            return try await fetchOneArtwork(withID: id)
+                        }
                     }
                 }
                 for try await artwork in group {
                     /// Add image of public object to Dictionary
                     if let unwrappedArtwork = artwork {
                         artworks.append(unwrappedArtwork)
-                        
-                        // Caching
-//                        Task (priority: .background) {
-//                            self.thumbnailsCache[id] = thumbnail
-//                        }
                     }
                 }
             }
             
             self.fetchedArtworks.append(contentsOf: artworks)
             
-        } catch {
-            print(error)
+        } catch let error as APIError {
+            self.errorMessage = error.description
+            
+            print("DEBUG: \(error.description)")
         }
+        
+        print("DEBUG: \(fetchedArtworks.count) objects with public images were loaded totally.")
+        
+        if fetchedArtworks.isEmpty {
+            self.errorMessage = APIError.noPublicImages.description
+        }
+        
+        isLoading = false
     }
     
+    // MARK: - Fetching Thumbnail Image
     func fetchOneArtwork(withID id: Int) async throws -> Artwork? {
         /// Preparing URL for fetching Object JSON Data
         let urlString = "https://collectionapi.metmuseum.org/public/collection/v1/objects/\(id)"
+        
         guard let url = URL(string: urlString) else { throw APIError.badURL }
-        let session = URLSession(configuration: .default)
-
+        
         /// Trying to get Data from Object URL
-        let (data, _) = try await session.data(from: url)
+        let (data, _) = try await URLSession.shared.data(from: url)
         
         /// Trying to decode Data to JSON
         let objectData = try JSONDecoder().decode(Object.self, from: data)
-        
-        // Caching
-//        Task (priority: .background) {
-//            self.objectsCache[id] = decoded
-//        }
         
         if let imageUrl = objectData.primaryImageSmall, !imageUrl.isEmpty {
             /// Checked for availability of public image and creating URL
             guard let url = URL(string: imageUrl) else { throw APIError.badURL}
             
-            let (data, _) = try await session.data(from: url)
+            let (data, _) = try await URLSession.shared.data(from: url)
             
             guard let image = UIImage(data: data) else { throw APIError.badImage}
+            
+            print("DEBUG: Image is loaded #\(id).")
             
             let artwork = Artwork(id: id, image: image, objectData: objectData)
             
@@ -185,7 +209,4 @@ class APIManager: ObservableObject {
             return nil
         }
     }
-    
-    
-    /// End of APIManager class
 }

@@ -8,16 +8,23 @@
 import Foundation
 
 enum APIError: Error {
-    case badURL, badImage, objectsNil, emptySearchText, badObject, nilString
+    case badURL
+    case badImage
+    case objectsNil
+    case emptySearchText
+    case badObject
+    case nilUrlString
+    case noPublicImages
     
     var description: String {
         switch self {
-        case .badURL: return "Error handled: error of creating URL from String."
-        case .badImage: return "Error handled: error of creating UIImage from Data."
-        case .objectsNil: return "Error handled: empty array of object IDs."
-        case .emptySearchText: return "Error handled: search text is empty."
-        case .badObject: return "Error occured while object data unwrapping."
-        case .nilString: return "Error handled. String is nil."
+        case .badURL: return "Incorrect URL."
+        case .badImage: return "No image found."
+        case .objectsNil: return "No results were found. Please try again with another search keywords."
+        case .emptySearchText: return "Empty search keyword. Please try again with another keywords."
+        case .badObject: return "Incorrect data type of artwork data object."
+        case .nilUrlString: return "No public image available for current artwork."
+        case .noPublicImages: return "No results with public images were found. Please try with another search keywords."
         }
     }
 }

@@ -10,8 +10,21 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject var apiManager: APIManager
     
+    @State private var selection: Int = 0
+    
     var body: some View {
-        Home()
+        TabView(selection: $selection) {
+            HomeView().tag(0)
+                .tabItem {
+                    Label("Home", systemImage: "house.fill")
+                }
+            
+            SearchView().tag(1)
+                .tabItem {
+                    Label("Search", systemImage: "magnifyingglass")
+                }
+        }
+        
     }
 }
 

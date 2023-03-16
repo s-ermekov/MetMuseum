@@ -15,7 +15,7 @@ struct Object: Decodable {
     var isPublicDomain        : Bool?
     var primaryImage          : String?
     var primaryImageSmall     : String?
-    var additionalImages      : [String?]
+//    var additionalImages      : [String?]
     //  var constituents          : [Constituents]
     var department            : String?
     var objectName            : String?
@@ -61,8 +61,12 @@ struct Object: Decodable {
     var metadataDate          : String?
     var repository            : String?
     var objectURL             : String?
-    //  var tags                  : [Tags]
+    var tags                  : [Tag]?
     var objectWikidataURL     : String?
     var isTimelineWork        : Bool?
     var GalleryNumber         : String?
+}
+
+struct Tag: Decodable, Hashable {
+    var term: String?
 }
