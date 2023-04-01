@@ -10,6 +10,7 @@ import UIKit
 @MainActor
 class APIManager: ObservableObject {
     
+    // MARK: - Published properties
     @Published var searchResult: SearchResult? = nil
     
     @Published var searchText: String = ""
@@ -20,31 +21,38 @@ class APIManager: ObservableObject {
     
     @Published var isLoading: Bool = false
     
-    
-    // MARK: - Previous search keywords
-    var searchKeywords: [String] = [] {
-        didSet {
-            print(searchKeywords)
-            saveKeywords()
-        }
+    init() {
+        loadKeywords()
     }
     
-    init() {
-        do {
-            let data = try Data(contentsOf: FileManager.keywordsPath)
-            searchKeywords = try JSONDecoder().decode([String].self, from: data)
-        } catch {
-            print("DEBUG: \(error.localizedDescription)")
-            searchKeywords = []
+    // MARK: - Previous search keywords
+    var searchKeywords: [String] = []
+    
+    func clearKeywords() {
+        searchKeywords = []
+        saveKeywords()
+    }
+    
+    func loadKeywords() {
+        Task {
+            do {
+                let data = try Data(contentsOf: FileManager.keywordsPath)
+                searchKeywords = try JSONDecoder().decode([String].self, from: data)
+            } catch {
+                print("DEBUG: \(error.localizedDescription)")
+                searchKeywords = []
+            }
         }
     }
     
     func saveKeywords() {
-        do {
-            let data = try JSONEncoder().encode(searchKeywords)
-            try data.write(to: FileManager.keywordsPath, options: [.atomic, .completeFileProtection])
-        } catch {
-            print("DEBUG: \(error.localizedDescription)")
+        Task {
+            do {
+                let data = try JSONEncoder().encode(searchKeywords)
+                try data.write(to: FileManager.keywordsPath, options: [.atomic, .completeFileProtection])
+            } catch {
+                print("DEBUG: \(error.localizedDescription)")
+            }
         }
     }
     
@@ -57,6 +65,7 @@ class APIManager: ObservableObject {
         } else {
             searchKeywords.insert(keyword, at: 0)
         }
+        saveKeywords()
     }
     
     // MARK: - Pagination
@@ -82,7 +91,8 @@ class APIManager: ObservableObject {
     }
     
     // MARK: - Set to Defaults
-    func allClear() {
+    func clearResults() {
+        self.searchResult = nil
         self.fetchedArtworks = []
         self.pages = [[]]
         self.pageToFetch = 0
@@ -103,7 +113,7 @@ class APIManager: ObservableObject {
         
         addKeyword(searchText)
         
-        allClear()
+        clearResults()
         
         let text = self.searchText.replacingOccurrences(of: " ", with: "%20")
         

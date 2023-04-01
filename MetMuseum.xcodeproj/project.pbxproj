@@ -8,9 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		221E699F29BA5BE600BD62F3 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221E699E29BA5BE600BD62F3 /* ColorExtension.swift */; };
-		2231816729C2FD8F00F17E1B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2231816629C2FD8F00F17E1B /* HomeView.swift */; };
+		2231816729C2FD8F00F17E1B /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2231816629C2FD8F00F17E1B /* InfoView.swift */; };
 		223A7E2729BAAAD1000A9FAD /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223A7E2629BAAAD1000A9FAD /* APIError.swift */; };
 		223A7E2929BBE377000A9FAD /* DownloadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223A7E2829BBE377000A9FAD /* DownloadButton.swift */; };
+		2247399429D7A72A002A5DDB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2247399329D7A72A002A5DDB /* Constants.swift */; };
+		2247399829D7B49B002A5DDB /* HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2247399729D7B49B002A5DDB /* HideKeyboard.swift */; };
 		228A80CA29B3F844006297FC /* MetMuseumApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228A80C929B3F844006297FC /* MetMuseumApp.swift */; };
 		228A80CC29B3F844006297FC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228A80CB29B3F844006297FC /* ContentView.swift */; };
 		228A80CE29B3F848006297FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 228A80CD29B3F848006297FC /* Assets.xcassets */; };
@@ -29,9 +31,11 @@
 
 /* Begin PBXFileReference section */
 		221E699E29BA5BE600BD62F3 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
-		2231816629C2FD8F00F17E1B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		2231816629C2FD8F00F17E1B /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		223A7E2629BAAAD1000A9FAD /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		223A7E2829BBE377000A9FAD /* DownloadButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadButton.swift; sourceTree = "<group>"; };
+		2247399329D7A72A002A5DDB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2247399729D7B49B002A5DDB /* HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboard.swift; sourceTree = "<group>"; };
 		228A80C629B3F844006297FC /* MetMuseum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetMuseum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		228A80C929B3F844006297FC /* MetMuseumApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetMuseumApp.swift; sourceTree = "<group>"; };
 		228A80CB29B3F844006297FC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -124,9 +128,9 @@
 		228A80D929B3F8F7006297FC /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2231816629C2FD8F00F17E1B /* HomeView.swift */,
 				228A80DB29B3F933006297FC /* SearchView.swift */,
 				2231816829C2FDCD00F17E1B /* SearchView */,
+				2231816629C2FD8F00F17E1B /* InfoView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -147,6 +151,8 @@
 				22F75D2629B99E65001B0487 /* ArrayExtension.swift */,
 				221E699E29BA5BE600BD62F3 /* ColorExtension.swift */,
 				22B774CB29C33BD500DFED06 /* AttributedString.swift */,
+				2247399329D7A72A002A5DDB /* Constants.swift */,
+				2247399729D7B49B002A5DDB /* HideKeyboard.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -229,13 +235,15 @@
 				22F75D2729B99E66001B0487 /* ArrayExtension.swift in Sources */,
 				228A80E229B40263006297FC /* APIManager.swift in Sources */,
 				228A80DC29B3F933006297FC /* SearchView.swift in Sources */,
+				2247399429D7A72A002A5DDB /* Constants.swift in Sources */,
+				2247399829D7B49B002A5DDB /* HideKeyboard.swift in Sources */,
 				22982AE529BBEEAA000C6E33 /* SearchResult.swift in Sources */,
 				22F75D2429B90B32001B0487 /* Artwork.swift in Sources */,
 				22ADC49929C2DD6500969E3C /* FileManagerExtension.swift in Sources */,
 				221E699F29BA5BE600BD62F3 /* ColorExtension.swift in Sources */,
 				228A80CA29B3F844006297FC /* MetMuseumApp.swift in Sources */,
 				22B774CC29C33BD500DFED06 /* AttributedString.swift in Sources */,
-				2231816729C2FD8F00F17E1B /* HomeView.swift in Sources */,
+				2231816729C2FD8F00F17E1B /* InfoView.swift in Sources */,
 				223A7E2729BAAAD1000A9FAD /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -379,7 +387,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ermekov.MetMuseum;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -410,7 +418,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ermekov.MetMuseum;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

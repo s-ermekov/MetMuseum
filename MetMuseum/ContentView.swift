@@ -14,14 +14,14 @@ struct ContentView: View {
     
     var body: some View {
         TabView(selection: $selection) {
-            HomeView().tag(0)
-                .tabItem {
-                    Label("Home", systemImage: "house.fill")
-                }
-            
-            SearchView().tag(1)
+            SearchView().tag(0)
                 .tabItem {
                     Label("Search", systemImage: "magnifyingglass")
+                }
+            
+            InfoView().tag(1)
+                .tabItem {
+                    Label("Information", systemImage: "info.circle")
                 }
         }
         

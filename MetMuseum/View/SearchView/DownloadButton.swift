@@ -11,7 +11,12 @@ struct DownloadButton: View {
     @State private var isSaving = false
     @State private var showDialog = false
     @State private var showAlert = false
+    
     let artwork: Artwork
+    
+    init(_ artwork: Artwork) {
+        self.artwork = artwork
+    }
     
     var body: some View {
         Button {

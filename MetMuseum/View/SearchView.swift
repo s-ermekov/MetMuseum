@@ -12,8 +12,6 @@ struct SearchView: View {
     @Environment(\.isSearching) var isSearching
     @Environment(\.dismissSearch) var dismissSearch
     
-    let width = UIScreen.main.bounds.width
-    
     var body: some View {
         NavigationView {
             // Search Results
@@ -48,7 +46,7 @@ struct SearchView: View {
                                 .buttonStyle(.bordered)
                             }
                         }
-                        .frame(width: width)
+                        .frame(width: Constants.width)
                         .padding(.vertical)
                     }
                     
@@ -65,13 +63,21 @@ struct SearchView: View {
                 }
             }
             .autocorrectionDisabled()
-            .onSubmit(of: .search) { apiManager.search() }
+            .onSubmit(of: .search) {
+                apiManager.search()
+                hideKeyboard()
+            }
             
             // NavBar
             .navigationTitle("Search")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Clear") { apiManager.allClear() }
+                    Menu {
+                        Button("Clear search results") { apiManager.clearResults() }
+                        Button("Clear search keywords") { apiManager.clearKeywords() }
+                    } label: {
+                        Text("Clear")
+                    }
                 }
             }
         }
