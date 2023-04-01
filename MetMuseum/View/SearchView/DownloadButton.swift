@@ -63,6 +63,7 @@ struct DownloadButton: View {
                     self.isSaving = false
                 }
             }
+            
             Button("Cancel", role: .cancel) {
                 self.isSaving = false
             }
