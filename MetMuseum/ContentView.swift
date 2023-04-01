@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject var apiManager: APIManager
     
+    // Tab Selection
     @State private var selection: Int = 0
     
     var body: some View {
