@@ -51,7 +51,7 @@ struct SearchViewCell: View {
             HStack (alignment: .center) {
                 Text("Artwork")
                 Spacer()
-                DownloadButton(artwork)
+                DownloadButton(artwork: artwork)
             }
             HStack (alignment: .bottom) {
                 if let title = artwork.objectData.title {
