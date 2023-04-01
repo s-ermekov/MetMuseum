@@ -8,14 +8,10 @@
 import SwiftUI
 
 struct SearchViewCell: View {
-    @State var isExpanded = false
+    @State private var isExpanded = false
+    
     let artwork: Artwork
-    
-    let columns = [
-        GridItem(.flexible(minimum: 50, maximum: 110)),
-        GridItem(.flexible(minimum: 100, maximum: 200))
-    ]
-    
+
     var body: some View {
         VStack (alignment: .leading, spacing: 0) {
             image
@@ -47,7 +43,7 @@ struct SearchViewCell: View {
             .scaledToFit()
             .frame(maxWidth: Constants.width - 48,
                    maxHeight: artwork.portraitMode ? Constants.width : artwork.height)
-            .background(.secondary.opacity(0.25))
+            .background(.secondary)
     }
     
     var bottomText: some View {

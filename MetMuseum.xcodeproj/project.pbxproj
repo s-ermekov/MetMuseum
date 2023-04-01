@@ -13,6 +13,7 @@
 		223A7E2929BBE377000A9FAD /* DownloadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223A7E2829BBE377000A9FAD /* DownloadButton.swift */; };
 		2247399429D7A72A002A5DDB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2247399329D7A72A002A5DDB /* Constants.swift */; };
 		2247399829D7B49B002A5DDB /* HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2247399729D7B49B002A5DDB /* HideKeyboard.swift */; };
+		2247399A29D7C854002A5DDB /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2247399929D7C854002A5DDB /* README.md */; };
 		228A80CA29B3F844006297FC /* MetMuseumApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228A80C929B3F844006297FC /* MetMuseumApp.swift */; };
 		228A80CC29B3F844006297FC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228A80CB29B3F844006297FC /* ContentView.swift */; };
 		228A80CE29B3F848006297FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 228A80CD29B3F848006297FC /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 		223A7E2829BBE377000A9FAD /* DownloadButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadButton.swift; sourceTree = "<group>"; };
 		2247399329D7A72A002A5DDB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2247399729D7B49B002A5DDB /* HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboard.swift; sourceTree = "<group>"; };
+		2247399929D7C854002A5DDB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		228A80C629B3F844006297FC /* MetMuseum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetMuseum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		228A80C929B3F844006297FC /* MetMuseumApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetMuseumApp.swift; sourceTree = "<group>"; };
 		228A80CB29B3F844006297FC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				22F75D2529B99E45001B0487 /* Helpers */,
 				228A80E329B4085F006297FC /* Info.plist */,
 				228A80CF29B3F848006297FC /* Preview Content */,
+				2247399929D7C854002A5DDB /* README.md */,
 			);
 			path = MetMuseum;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 			files = (
 				228A80D129B3F848006297FC /* Preview Assets.xcassets in Resources */,
 				22ADC49529C2D7FB00969E3C /* sunflowers.json in Resources */,
+				2247399A29D7C854002A5DDB /* README.md in Resources */,
 				228A80CE29B3F848006297FC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,7 +391,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.2;
+				MARKETING_VERSION = 0.1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ermekov.MetMuseum;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -418,7 +422,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.2;
+				MARKETING_VERSION = 0.1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ermekov.MetMuseum;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

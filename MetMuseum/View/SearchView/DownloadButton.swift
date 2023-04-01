@@ -75,11 +75,12 @@ struct DownloadButton: View {
 
 extension Artwork {
     func savePhoto(smallImage: Bool) async -> Bool {
-        // returns true if error handled
+        // returns true if error catched
         if smallImage {
             // trying to save small preloaded image
             UIImageWriteToSavedPhotosAlbum(self.image, nil, nil, nil)
         } else {
+            
             // trying to download large image
             do {
                 guard let urlString = self.objectData.primaryImage else { throw APIError.nilUrlString }
